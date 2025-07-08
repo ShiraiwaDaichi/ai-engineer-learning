@@ -1,0 +1,9 @@
+name: ci  # GitHub Actions で動く簡単なテストワークフロー
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: pip install -r requirements.txt  # 依存関係のインストール
+      - run: pytest  # ユニットテストを実行
